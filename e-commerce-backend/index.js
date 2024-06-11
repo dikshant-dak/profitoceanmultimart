@@ -1,4 +1,3 @@
-const port = 4000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -17,19 +16,21 @@ app.use(express.json());
 
 app.use(cors());
 
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://www.profitoceanmultimart.online"
+const REACT_APP_URL = process.env.NEXT_APP_URL || "https://www.profitoceanmultimart.online"
+const BASE_URL = process.env.BASE_URL || "https://profit-ocean.uc.r.appspot.com"
+const MONGO_URL = process.env.MONGO_URL || "mongodb+srv://dikshantdak:xk7hXXrKl5L4G3NI@cluster0.dqv9oqe.mongodb.net/profit-ocean"
+
 const stripe = new stripePackage("sk_test_51MX7twSJoOriL9wG8gtUKCl0WMVRXBGnEH16kubheVuLGnuRemZ94qEt8FDctufnXvF4c1kUIMyUEy7bA1otGmRv00gzqcWzPT");
 
 // Database Connection With MongoDB
-mongoose.connect("mongodb+srv://dikshantdak:xk7hXXrKl5L4G3NI@cluster0.dqv9oqe.mongodb.net");
+mongoose.connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("open", () => console.log("Connected to MongoDB 🚀🚀"));
 db.on("error", (error) => console.error(error));
 // paste your mongoDB Connection string above with password
 // password should not contain '@' special character
 
-const CORS_ORIGIN = process.env.CORS_ORIGIN || ""
-const REACT_APP_URL = process.env.NEXT_APP_URL || ""
-const BASE_URL = process.env.BASE_URL || "http://localhost:4000"
 
 app.use(
   cors({
@@ -38,12 +39,11 @@ app.use(
     credentials: true,
   })
 );
-
+app.set('trust proxy', true);
 //Image Storage Engine 
 const storage = multer.diskStorage({
     destination: './upload/images',
     filename: (req, file, cb) => {
-      console.log(file);
         return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
     }
 })
@@ -133,7 +133,6 @@ app.get("/", (req, res) => {
 
 //Create an endpoint at ip/login for login the user and giving auth-token
 app.post('/login', async (req, res) => {
-  console.log("Login");
     let success = false;
     let user = await Users.findOne({ email: req.body.email });
     if (user) {
@@ -145,7 +144,6 @@ app.post('/login', async (req, res) => {
                 }
             }
 			success = true;
-      console.log(user.id);
 			const token = jwt.sign(data, 'secret_ecom');
 			res.json({ success, token });
         }
@@ -160,7 +158,6 @@ app.post('/login', async (req, res) => {
 
 //Create an endpoint at ip/auth for regestring the user in data base & sending token
 app.post('/signup', async (req, res) => {
-  console.log("Sign Up");
         let success = false;
         let check = await Users.findOne({ email: req.body.email });
         if (check) {
@@ -190,27 +187,23 @@ app.post('/signup', async (req, res) => {
 
 app.get("/allproducts", async (req, res) => {
 	let products = await Product.find({});
-  console.log("All Products");
     res.send(products);
 });
 
 app.get("/newcollections", async (req, res) => {
 	let products = await Product.find({});
   let arr = products.slice(1).slice(-8);
-  console.log("New Collections");
   res.send(arr);
 });
 
 app.get("/popularinwomen", async (req, res) => {
 	let products = await Product.find({});
   let arr = products.splice(0,  4);
-  console.log("Popular In Women");
   res.send(arr);
 });
 
 //Create an endpoint for saving the product in cart
 app.post('/addtocart', fetchuser, async (req, res) => {
-	console.log("Add Cart");
     let userData = await Users.findOne({_id:req.user.id});
     userData.cartData[req.body.itemId] += 1;
     await Users.findOneAndUpdate({_id:req.user.id}, {cartData:userData.cartData});
@@ -219,7 +212,6 @@ app.post('/addtocart', fetchuser, async (req, res) => {
 
   //Create an endpoint for saving the product in cart
 app.post('/removefromcart', fetchuser, async (req, res) => {
-	console.log("Remove Cart");
     let userData = await Users.findOne({_id:req.user.id});
     if(userData.cartData[req.body.itemId]!=0)
     {
@@ -231,10 +223,8 @@ app.post('/removefromcart', fetchuser, async (req, res) => {
 
   //Create an endpoint for saving the product in cart
 app.post('/getcart', fetchuser, async (req, res) => {
-  console.log("Get Cart");
   let userData = await Users.findOne({_id:req.user.id});
   res.json(userData.cartData);
-
   })
 
 
@@ -256,15 +246,12 @@ app.post("/addproduct", async (req, res) => {
     new_price: req.body.new_price,
     old_price: req.body.old_price,
   });
-  console.log(product);
   await product.save();
-  console.log("Saved");
   res.json({success:true,name:req.body.name})
 });
 
 app.post("/removeproduct", async (req, res) => {
   const product = await Product.findOneAndDelete({ id: req.body.id });
-  console.log("Removed");
   res.json({success:true,name:req.body.name})
 });
 
