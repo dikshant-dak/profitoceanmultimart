@@ -20,6 +20,7 @@ const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://www.profitoceanmultimart
 const REACT_APP_URL = process.env.NEXT_APP_URL || "https://www.profitoceanmultimart.online"
 const BASE_URL = process.env.BASE_URL || "https://profit-ocean.uc.r.appspot.com"
 const MONGO_URL = process.env.MONGO_URL || "mongodb+srv://dikshantdak:xk7hXXrKl5L4G3NI@cluster0.dqv9oqe.mongodb.net/profit-ocean"
+const port = process.env.PORT || 4000;
 
 const stripe = new stripePackage("sk_test_51MX7twSJoOriL9wG8gtUKCl0WMVRXBGnEH16kubheVuLGnuRemZ94qEt8FDctufnXvF4c1kUIMyUEy7bA1otGmRv00gzqcWzPT");
 
