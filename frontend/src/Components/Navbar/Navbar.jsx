@@ -10,6 +10,7 @@ const Navbar = () => {
 
   let [menu,setMenu] = useState("shop");
   const {getTotalCartItems} = useContext(ShopContext);
+  const [moreDropdownVisible, setMoreDropdownVisible] = useState(false);
 
   const menuRef = useRef();
 
@@ -17,6 +18,10 @@ const Navbar = () => {
     menuRef.current.classList.toggle('nav-menu-visible');
     e.target.classList.toggle('open');
   }
+
+  const toggleMoreDropdown = () => {
+    setMoreDropdownVisible(!moreDropdownVisible);
+  };
 
   return (
     <div className='nav'>
@@ -30,6 +35,18 @@ const Navbar = () => {
         <li onClick={()=>{setMenu("mens")}}><Link to='/mens' style={{ textDecoration: 'none' }}>Men</Link>{menu==="mens"?<hr/>:<></>}</li>
         <li onClick={()=>{setMenu("womens")}}><Link to='/womens' style={{ textDecoration: 'none' }}>Women</Link>{menu==="womens"?<hr/>:<></>}</li>
         <li onClick={()=>{setMenu("kids")}}><Link to='/kids' style={{ textDecoration: 'none' }}>Kids</Link>{menu==="kids"?<hr/>:<></>}</li>
+        <li onClick={toggleMoreDropdown} style={{ position: 'relative'  }}>
+          More
+          {moreDropdownVisible && (
+            <ul className="more-dropdown">
+              <li><Link to='/mobiles' style={{ textDecoration: 'none' }}>Mobiles</Link></li>
+              <li><Link to='/laptops' style={{ textDecoration: 'none' }}>Laptops</Link></li>
+              <li><Link to='/televisions' style={{ textDecoration: 'none' }}>Televisions</Link></li>
+              <li><Link to='/refrigerators' style={{ textDecoration: 'none' }}>Refrigerators</Link></li>
+              <li><Link to='/washingmachines' style={{ textDecoration: 'none' }}>Washing Machines</Link></li>
+            </ul>
+          )}
+        </li>
       </ul>
       <div className="nav-login-cart">
         {localStorage.getItem('auth-token')

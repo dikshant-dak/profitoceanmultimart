@@ -12,6 +12,7 @@ const ShopCategory = (props) => {
     fetch(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/allproducts`) 
             .then((res) => res.json()) 
             .then((data) => setAllProducts(data))
+            console.log("allproducts",allproducts)
     }
 
     useEffect(() => {

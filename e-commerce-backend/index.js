@@ -16,9 +16,9 @@ app.use(express.json());
 
 app.use(cors());
 
-const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://www.profitoceanmultimart.online"
-const REACT_APP_URL = process.env.NEXT_APP_URL || "https://www.profitoceanmultimart.online"
-const BASE_URL = process.env.BASE_URL || "https://profit-ocean.uc.r.appspot.com"
+const CORS_ORIGIN = process.env.CORS_ORIGIN
+const REACT_APP_URL = process.env.NEXT_APP_URL 
+const BASE_URL = process.env.BASE_URL
 const MONGO_URL = process.env.MONGO_URL || "mongodb+srv://dikshantdak:xk7hXXrKl5L4G3NI@cluster0.dqv9oqe.mongodb.net/test?retryWrites=true&w=majority"
 const port = process.env.PORT || 4000;
 

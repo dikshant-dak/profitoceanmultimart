@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./AddProduct.css";
 import upload_area from "../Assets/upload_area.svg";
-import process from "process";
 
 const AddProduct = () => {
 
@@ -22,7 +21,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append('product', image);
     
-    await fetch(`${process.env.REACT_APP_SERVER_URL}/upload`, {
+    await fetch(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/upload`, {
       method: 'POST',
       headers: {
         Accept:'application/json',
@@ -34,7 +33,7 @@ const AddProduct = () => {
 
     if (dataObj.success) {
       product.image = dataObj.image_url;
-      await fetch(`${process.env.REACT_APP_SERVER_URL}/addproduct`, {
+      await fetch(`${import.meta.env.VITE_REACT_APP_SERVER_URL}/addproduct`, {
       method: 'POST',
       headers: {
         Accept:'application/json',
@@ -79,6 +78,11 @@ const AddProduct = () => {
           <option value="women">Women</option>
           <option value="men">Men</option>
           <option value="kid">Kid</option>
+          <option value="mobiles">Mobiles</option>
+          <option value="laptops">laptops</option>
+          <option value="televisions">Televisions</option>
+          <option value="refrigerators">Refrigerators</option>
+          <option value="washingmachines">Washing Machines</option>
         </select> 
       </div>
       <div className="addproduct-itemfield">
