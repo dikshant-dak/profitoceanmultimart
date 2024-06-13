@@ -7,7 +7,8 @@
     justify-content: space-between;
     padding: 0px 8%;
     margin-bottom: 150px;
-    background: linear-gradient(180deg, #fde1ff 0%,#e1ffea22 60%);;
+    background: linear-gradient(180deg, #fde1ff 0%,#e1ffea22 60%);
+    border-radius: 16px;
 }
 
 .offers-left h1{
@@ -31,6 +32,11 @@
     font-weight: 500;
     margin-top: 30px;
     cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+.offers-left button:hover{
+    opacity: 0.8;
 }
 .offers-right img{
     width: 320px;

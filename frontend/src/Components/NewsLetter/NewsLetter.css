@@ -11,6 +11,7 @@
     margin-bottom: 100px;
     background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
     gap: 20px;
+    border-radius: 16px;
 }
 
 .newsletter h1{
@@ -20,7 +21,7 @@
 }
 
 .newsletter p{
-    color: #454545;
+    color: whitesmoke;
     font-size: 18px;
 }
 
@@ -54,7 +55,11 @@
     color: white;
     font-size: 16px;
     cursor: pointer;
-    font-family: 'poppins';
+    font-family: "Poppins";
+    font-size: 20px;
+}
+.newsletter div button:hover{
+    background: #FF4141;
 }
 
 /* ----------- media query--------- */

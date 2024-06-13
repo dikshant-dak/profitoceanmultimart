@@ -12,7 +12,7 @@ const ContactForm = () => {
         <div className="contact-form-container">
             <div className="contact-form-wrapper">
                 <h1 className="contact-form-header">Message Us</h1>
-                <p className="contact-form-description">We want to hear from you! If you have any questions, feedback, or suggestions, please don't hesitate to contact us. You can message us as:</p>
+                <p className="contact-form-description">We want to hear from you! If you have any questions, feedback, or suggestions, please don&apos;t hesitate to contact us. You can message us as:</p>
 
                 <div className="contact-form-input-group">
                     <div className="contact-form-row">

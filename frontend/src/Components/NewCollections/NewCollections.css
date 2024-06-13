@@ -4,11 +4,13 @@
     align-items: center;
     gap: 5px;
    margin-bottom: 100px;
+   border-top: 1px solid whitesmoke;
 }
 .new-collections h1{
-    color: #171717;
+    color: whitesmoke;
     font-size: 40px;
     font-weight: 600;
+    margin-top: 30px;
 }
 .new-collections hr {
     width: 150px;

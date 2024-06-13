@@ -1,9 +1,11 @@
 .nav{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 1px 3px -2px black;
+    box-shadow: 200px;
     padding: 15px 70px;
+    background: linear-gradient(to right, #434343, #000000);
+    border-bottom: 1px solid whitesmoke;
+    align-items: center;
 }
 .nav-logo{
     display: flex;
@@ -12,18 +14,20 @@
 }
 .nav-logo img{
     width: 45px;
+    border-radius: 5px;
 }
 .nav-logo p{
-    color: #171717;
+    color: whitesmoke;
     font-size: 28px;
     font-weight: 600;
 }
 .nav-menu{
     display: flex;
     align-items: center;
+    justify-content: center;
     list-style: none;
     gap: 40px;
-    color: #626262;
+    color: whitesmoke;
     font-size: 16px;
     font-weight: 500;
 }
@@ -53,19 +57,20 @@
     width: 130px;
     height: 45px;
     outline: none;
-    border: 1px solid #7a7a7a;
     border-radius: 75px;
-    color: #515151;
+    /* color: #515151; */
     font-size: 20px;
     font-weight: 500;
     background: white;
     cursor: pointer;
+    font-weight: 600;
 }
 .nav-login-cart button:active{
     background: #f3f3f3;
 }
-.nav-login-cart img{
-    width: 35px;
+.nav-login-cart button:hover{
+    background-color: #FF4141;
+    color: whitesmoke;
 }
 .nav-cart-count{
     width: 18px;
@@ -108,6 +113,7 @@
 @media(max-width:900px){
     .nav{
         padding: 15px 40px;
+        
     }
     .nav-menu{
         gap: 15px;
@@ -123,9 +129,14 @@
     }
     .nav-dropdown{
         display: block;
-        width: 30px;
+        width: 20px;
         rotate: -90deg;
         transition: 0.5s;
+        /* background: white; */
+        /* background-color: transparent; */
+        /* background-color: white; */ 
+        /* mix-blend-mode: overlay; */
+        /* mix-blend-mode: color-burn; */
     } 
     .nav-menu{
         display: none;
@@ -136,6 +147,7 @@
         justify-content: center;
         top: 60px;
         left: 0;
+        color: black;
     }
     .nav-menu-visible{
         display: flex;
@@ -150,14 +162,17 @@
 
 @media(max-width:500px){
     .nav{
-        padding: 15px 15px;
+        padding: 0;
+        display: flex;
+        flex-direction: space-between;
+        align-items: center;
     }
 
     .nav-logo img{
         width: 30px;
     }
     .nav-logo p{
-        font-size: 18px;
+        font-size: 10px;
     }
     .nav-menu-visible{
         height: 70px;
@@ -166,9 +181,14 @@
     .nav-login-cart{
         transform: scale(0.8);
     } 
-    .nav-login-cart{
-        gap: 10px;
+    .nav-login-cart button{
+        width: 80px;
+        height: 35px;
+        font-size: 16px;
     }
+    /* .nav-login-cart{
+        gap: 10px;
+    } */
 }
 
 @media(max-width:900px){

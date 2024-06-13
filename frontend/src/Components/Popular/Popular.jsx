@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Popular.css'
 import Item from '../Item/Item'
 
@@ -14,6 +15,10 @@ const Popular = (props) => {
       </div>
     </div>
   )
+}
+
+Popular.propTypes = {
+  data: PropTypes.array.isRequired
 }
 
 export default Popular
