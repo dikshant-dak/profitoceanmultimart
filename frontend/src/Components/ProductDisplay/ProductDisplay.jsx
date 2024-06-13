@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import "./ProductDisplay.css";
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
@@ -57,6 +58,10 @@ const ProductDisplay = (props) => {
       </div>
     </div>
   );
+};
+
+ProductDisplay.propTypes = {
+  product: PropTypes.object.isRequired, // Add prop validation for 'product.image'
 };
 
 export default ProductDisplay;
