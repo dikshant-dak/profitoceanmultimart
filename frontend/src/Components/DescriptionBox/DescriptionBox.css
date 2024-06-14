@@ -13,6 +13,7 @@
     width: 171px;
     height: 70px;
     border: 1px solid #d0d0d0;
+    color: whitesmoke;
 }
 .descriptionbox-nav-box.fade{
     background: #FBFBFB;
@@ -25,6 +26,7 @@
     border: 1px solid #D0D0D0;
     padding: 48px;
     padding-bottom: 70px;
+    color: whitesmoke;
 }
 @media(max-width:1280px){
     .descriptionbox{

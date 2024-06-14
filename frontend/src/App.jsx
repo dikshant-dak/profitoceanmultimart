@@ -13,6 +13,7 @@ import AboutUs from "./Pages/About/AboutUs";
 import Vision from "./Pages/Vision/Vision";
 import Contact from "./Pages/Contact/Contact";
 import Terms from "./Pages/Terms/Terms";
+import Testimonials from "./Pages/Testimonials";
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/our-vision" element={<Vision />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms-and-conditions" element={<Terms />} />
+          <Route path="/testimonials" element={<Testimonials />} />
         </Routes>
         <Footer />
       </Router>

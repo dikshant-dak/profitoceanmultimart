@@ -31,6 +31,9 @@ const Footer = () => {
         <Link to="/contact">
           <li>Contact Us</li>
         </Link>
+        <Link to="/testimonials">
+          <li>Testimonials</li>
+        </Link>
       </ul>
       <div className="footer-social-icons">
         {/* <div className="footer-icons-container">

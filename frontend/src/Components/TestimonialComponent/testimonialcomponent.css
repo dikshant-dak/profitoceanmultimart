@@ -1,0 +1,114 @@
+.testimonial-container {
+    width: 100%;
+    height: 100%;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .testimonial-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    width: 100%;
+    opacity: 1;
+    background: fixed;
+    background-color: #161514;
+    background-blend-mode: overlay;
+    background-image: url('../Assets/test1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    opacity: 0.7;
+    border-top: #ffe2a3;
+    border-bottom: #ffe2a3;
+  }
+  
+  .testimonial-section.sm\\:p-2 {
+    padding: 0.5rem;
+  }
+  
+  .testimonial-section.lg\\:p-10 {
+    padding: 2.5rem;
+  }
+  
+  .testimonial-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #ffe2a3;
+  }
+  
+  .testimonial-title.sm\\:text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .testimonial-title.lg\\:text-4xl {
+    font-size: 2.25rem;
+  }
+  
+  .carousel-container {
+    width: 50%;
+    margin-top: 2rem;
+  }
+  
+  .carousel-container.xl {
+    width: 50%;
+  }
+  
+  .testimonial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .testimonial-text {
+    margin-top: 0;
+    font-size: 1.125rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .testimonial-text.md\\:mt-8 {
+    margin-top: 2rem;
+  }
+  
+  .testimonial-text.md\\:text-xl {
+    font-size: 1.25rem;
+  }
+  
+  .testimonial-text.text {
+    color: #ffe2a3;
+  }
+  
+  .testimonial-author-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    gap: 1.25rem;
+  }
+  
+  .testimonial-quote {
+    font-size: 3rem;
+    color: #ffe2a3;
+    font-weight: 600;
+  }
+  
+  .author-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .author-name {
+    color: #ffe2a3;
+  }
+  
+  .author-position {
+    color: #4b5563;
+    font-weight: 600;
+  }
+  
