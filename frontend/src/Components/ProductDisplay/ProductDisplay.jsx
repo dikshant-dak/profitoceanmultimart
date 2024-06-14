@@ -37,7 +37,7 @@ const ProductDisplay = (props) => {
           <div className="productdisplay-right-price-old">${product.old_price}</div>
           <div className="productdisplay-right-price-new">${product.new_price}</div>
         </div>
-        <div className="productdisplay-right-description">
+        <div className="productdisplay-right-description" style={{color: "whitesmoke"}}>
           A lightweight, usually knitted, pullover shirt, close-fitting and with
           a round neckline and short sleeves, worn as an undershirt or outer
           garment.

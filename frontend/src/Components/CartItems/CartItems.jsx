@@ -49,27 +49,27 @@ const CartItems = () => {
       
       <div className="cartitems-down">
         <div className="cartitems-total">
-          <h1>Cart Totals</h1>
+          <h1 style={{color: "whitesmoke"}}>Cart Totals</h1>
           <div>
             <div className="cartitems-total-item">
-              <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p style={{color: "whitesmoke"}}>Subtotal</p>
+              <p style={{color: "whitesmoke"}}>${getTotalCartAmount()}</p>
             </div>
             <hr />
             <div className="cartitems-total-item">
-              <p>Shipping Fee</p>
-              <p>Free</p>
+              <p style={{color: "whitesmoke"}}>Shipping Fee</p>
+              <p style={{color: "whitesmoke"}}>Free</p>
             </div>
             <hr />
             <div className="cartitems-total-item">
-              <h3>Total</h3>
-              <h3>${getTotalCartAmount()}</h3>
+              <h3 style={{color: "whitesmoke"}}>Total</h3>
+              <h3 style={{color: "whitesmoke"}}>${getTotalCartAmount()}</h3>
             </div>
           </div>
           <button onClick={makePayment}>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cartitems-promocode">
-          <p>If you have a promo code, Enter it here</p>
+          <p style={{color: "whitesmoke"}}>If you have a promo code, Enter it here</p>
           <div className="cartitems-promobox">
             <input type="text" placeholder="promo code" />
             <button>Submit</button>
