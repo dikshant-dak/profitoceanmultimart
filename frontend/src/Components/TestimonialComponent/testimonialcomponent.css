@@ -112,3 +112,8 @@
     font-weight: 600;
   }
   
+  @media (max-width: 768px) {
+    .testimonial-title {
+      font-size: 12px;
+    }
+  }
