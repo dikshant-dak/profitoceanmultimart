@@ -65,7 +65,7 @@
   
   .testimonial-text {
     margin-top: 0;
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-align: center;
     color: white;
   }
@@ -114,6 +114,6 @@
   
   @media (max-width: 768px) {
     .testimonial-title {
-      font-size: 12px;
+      font-size: 35px;
     }
   }
