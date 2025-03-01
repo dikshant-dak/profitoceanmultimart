@@ -87,7 +87,7 @@ const AboutUs = () => {
         <footer className="about-us-footer">
           <p>
             Thank you for choosing us as your fashion destination. We look
-            forward to serving you!
+            forward to serving you! :)
           </p>
         </footer>
       </div>
